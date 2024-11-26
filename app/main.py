@@ -1,13 +1,13 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from app.services import fetch_exchange_rate
 
 app = FastAPI(title="Currency Converter API")
 
 @app.get("/api/rates")
-async def convert_currency(from_: str, to: str, value: float):
+async def convert_currency(to: str, value: float, from_: str = Query(alias="from")):
     """
     Конвертирует валюту из одной в другую.
-    Пример запроса: /api/rates?from_=USD&to=RUB&value=1
+    Пример запроса: /api/rates?from=USD&to=RUB&value=1
     """
     try:
         rate = await fetch_exchange_rate(from_, to)

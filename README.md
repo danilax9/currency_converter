@@ -56,7 +56,7 @@ cd currency_converter
    ```
 
 ### 3. Проверка API
-- Swagger-документация доступна по адресу: http://127.0.0.1:8000/docs
-- Пример запроса `curl "http://127.0.0.1:8000/api/rates?from=USD&to=RUB&value=100"`:
+- Swagger-документация будет доступна по адресу: http://127.0.0.1:8000/docs
+- Пример запроса `curl "http://127.0.0.1:8000/api/rates?from_=USD&to=RUB&value=100"`:
 
 
